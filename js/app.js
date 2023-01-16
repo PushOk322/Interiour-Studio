@@ -110,6 +110,9 @@ if (pageDefiner.classList.contains("blog") || pageDefiner.classList.contains("on
 if (pageDefiner.classList.contains("contacts")) {
     headerLinks[4].classList.toggle("active");
 };
+if (pageDefiner.classList.contains("404")) {
+    headerLinks[0].classList.toggle("active");
+};
 
 
 
