@@ -128,14 +128,14 @@ if (formButtons && popup && cross) {
         formButtons[i].addEventListener('click', (e) => {
             e.preventDefault();
             popup.classList.toggle("active");
-            document.body.classList.add('lock');
+            document.body.classList.add('_lock');
             console.log("class changed by button");
         });
     }
     cross.addEventListener('click', () => {
         popup.classList.toggle("active");
         console.log("class changed");
-        document.body.classList.remove('lock');
+        document.body.classList.remove('_lock');
     });
 };
 
@@ -204,5 +204,38 @@ const swiperOneNews = new Swiper('.mini-slider', {
     },
 });
 
+const swiperAbout = new Swiper('.company-philosophy__slider', {
+    slidesPerView:1.2,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+        nextEl: ".company-philosophy__next",
+        prevEl: ".company-philosophy__prev",
+    },
+    pagination: {
+        el: ".company-philosophy__progressbar",
+        type: "progressbar",
+    },
+    breakpoints: {
+        // when window width is >= 320px
+        200: {
+            slidesPerView: 1.2,
+            spaceBetween: 12,
+        },
+        500: {
+            slidesPerView: 1.35,
+            spaceBetween: 12,
+        },
+        // when window width is >= 480px
+        769: {
+            slidesPerView: 1.2,
+            spaceBetween: 12,
+        },
+        1025: {
+            slidesPerView: 1.2,
+            spaceBetween: 12,
+        },
+    },
+});
 
 
