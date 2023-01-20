@@ -139,6 +139,26 @@ if (formButtons && popup && cross) {
     });
 };
 
+const popupCompleteButton = document.querySelector('.popup-complete-button');
+console.log(popupCompleteButton);
+const popupComplete = document.querySelector('.popup-complete__outer');
+console.log(popupComplete);
+const crossComplete = document.querySelector('.popup-complete__cross');
+console.log(crossComplete);
+if (popupCompleteButton && popupComplete && crossComplete) {
+    popupCompleteButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        popupComplete.classList.toggle("active");
+        document.body.classList.add('_lock');
+        console.log("class changed by button");
+    });
+    crossComplete.addEventListener('click', () => {
+        popupComplete.classList.toggle("active");
+        console.log("class changed");
+        document.body.classList.remove('_lock');
+    });
+};
+
 //********POPUP*******END/
 
 //********SWIPER**********/
@@ -205,7 +225,7 @@ const swiperOneNews = new Swiper('.mini-slider', {
 });
 
 const swiperAbout = new Swiper('.company-philosophy__slider', {
-    slidesPerView:1.2,
+    slidesPerView: 1.2,
     spaceBetween: 20,
     loop: true,
     navigation: {
