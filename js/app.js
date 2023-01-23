@@ -41,7 +41,6 @@ if (dropdownButton) {
     const arrow = document.querySelectorAll('.select__arrow');
     const panel = document.querySelectorAll('.select__body');
     const container = document.querySelectorAll('.select');
-    console.log(container);
     for (let i = 0; i < dropdownButton.length; i++) {
         dropdownButton[i].addEventListener("click", function (e) {
             if (arrow[i].classList.contains('active')) {
@@ -93,7 +92,6 @@ if (dropdownButton) {
 
 
 const pageDefiner = document.querySelector(".page-definer");
-console.log(pageDefiner);
 const headerLinks = document.querySelectorAll(".header__link");
 if (pageDefiner.classList.contains("index")) {
     headerLinks[0].classList.toggle("active");
@@ -118,43 +116,33 @@ if (pageDefiner.classList.contains("404")) {
 
 //********POPUP*******/
 const formButtons = document.querySelectorAll('.popup-button');
-console.log(formButtons);
 const popup = document.querySelector('.popup__outer');
-console.log(popup);
 const cross = document.querySelector('.popup__cross');
-console.log(cross);
 if (formButtons && popup && cross) {
     for (let i = 0; i < formButtons.length; i++) {
         formButtons[i].addEventListener('click', (e) => {
             e.preventDefault();
             popup.classList.toggle("active");
             document.body.classList.add('_lock');
-            console.log("class changed by button");
         });
     }
     cross.addEventListener('click', () => {
         popup.classList.toggle("active");
-        console.log("class changed");
         document.body.classList.remove('_lock');
     });
 };
 
 const popupCompleteButton = document.querySelector('.popup-complete-button');
-console.log(popupCompleteButton);
 const popupComplete = document.querySelector('.popup-complete__outer');
-console.log(popupComplete);
 const crossComplete = document.querySelector('.popup-complete__cross');
-console.log(crossComplete);
 if (popupCompleteButton && popupComplete && crossComplete) {
     popupCompleteButton.addEventListener('click', (e) => {
         e.preventDefault();
         popupComplete.classList.toggle("active");
         document.body.classList.add('_lock');
-        console.log("class changed by button");
     });
     crossComplete.addEventListener('click', () => {
         popupComplete.classList.toggle("active");
-        console.log("class changed");
         document.body.classList.remove('_lock');
     });
 };
